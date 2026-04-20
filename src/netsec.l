@@ -7,7 +7,6 @@ int line_num = 1;
 extern YYSTYPE yylval;
 extern int interactive_mode;
 
-/* Validate IP address octets */
 int validate_ip(const char *ip) {
     int a, b, c, d;
     if (sscanf(ip, "%d.%d.%d.%d", &a, &b, &c, &d) == 4) {
@@ -71,11 +70,11 @@ NEWLINE     \n
     return T_PORT_LIST;
 }
 
-{WHITESPACE}    { /* skip whitespace */ }
+{WHITESPACE}    { }
 
 {NEWLINE}       { line_num++; return T_NEWLINE; }
 
-"#"[^\n]*       { /* skip comments */ }
+"#"[^\n]*       { }
 
 . {
     fprintf(stderr, "Line %d Lexical Error: Unknown token '%s'\n", line_num, yytext);
