@@ -1,0 +1,16 @@
+# ============================================================
+# rules.nsp — NetSec Policy File
+# NetSec Policy Compiler (NSPC) — Example Policy
+# ============================================================
+
+# --- Network Scanning Rules (translated to nmap) ---
+SCAN TARGET 192.168.1.100 PORT 80,443 WITH SYN_STEALTH
+SCAN TARGET 10.0.0.0/24 PORT 22 WITH VULN_SCAN
+SCAN TARGET 172.16.0.5 PORT 21,22,23,80 WITH OS_DETECT
+SCAN TARGET 192.168.1.1 PORT 80 WITH PING_SCAN
+
+# --- Firewall Rules (translated to iptables) ---
+BLOCK INBOUND FROM 10.0.0.5 PROTOCOL UDP PORT 53
+ALLOW OUTBOUND TO 8.8.8.8 PROTOCOL TCP PORT 443
+BLOCK INBOUND FROM 203.0.113.5 PROTOCOL TCP PORT 22
+ALLOW OUTBOUND TO 1.1.1.1 PROTOCOL TCP PORT 80
