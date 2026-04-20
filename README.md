@@ -48,3 +48,8 @@ cd src
 bison -d netsec.y
 flex netsec.l
 gcc netsec.tab.c lex.yy.c -o nspc.exe
+
+```
+## Presentation Slide Link
+
+👉 [View Presentation Slides](https://canva.link/8olsop5s4ftrpzm)
