@@ -1,4 +1,4 @@
-# NetSec Policy Compiler (NSPC) ⚙️
+# NetSec Policy Compiler
 
 ## Overview
 NetSec Policy Compiler (NSPC) is a compiler project that converts a custom network security language into real system commands.
