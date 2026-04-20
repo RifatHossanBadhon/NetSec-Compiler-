@@ -59,7 +59,6 @@ NEWLINE     \n
     if (!validate_ip(yytext)) {
         fprintf(stderr, "Line %d Error: Invalid IP Address format (%s). Octets cannot exceed 255.\n", line_num, yytext);
         if (!interactive_mode) exit(1);
-        /* In interactive mode, return it anyway so parser handles the syntax error */
     }
     yylval.str = strdup(yytext);
     return T_IP_ADDR;
